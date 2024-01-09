@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Housing Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- tag -->
+    <div class="container">
+        <h1>Housing Price Prediction</h1>
+        <form method="POST">
+            <label for="lot_area">Lot Area:</label>
+            <input type="text" id="lot_area" name="lot_area" required>
+
+            <label for="lot_frontage">Lot Frontage:</label>
+            <input type="text" id="lot_frontage" name="lot_frontage" required>
+
+            <label for="total_room">Total Rooms:</label>
+            <input type="text" id="total_room" name="total_room" required>
+
+            <!-- Add similar input fields for oth   er features -->
+
+            <button type="submit">Predict</button>
+        </form>
+        {% if prediction %}
+        <div class="pred">
+            <p class="prediction">Predicted Median House Price: ${{ prediction }}</p>
+        </div>
+        
+        {% endif %}
+    </div>
+</body>
+</html>
